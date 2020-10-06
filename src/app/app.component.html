@@ -2,28 +2,30 @@
     <div>
         <span>{{title}}</span>
         <!--<span [textContent]="title"></span>-->
-        <a href="" mat-button>
+        <a routerLink="/home" mat-button>
             <mat-icon>home</mat-icon>
             Accueil
         </a>
 
-        <a href="" mat-button>
+        <a [routerLink]="['/donneurs/liste']" mat-button>
             <mat-icon>accessibility</mat-icon>
             Donneur
         </a>
 
-        <a href="" mat-button>
+        <a routerLink="/donneurs/ajouter" mat-button>
             <mat-icon>add</mat-icon>
             Ajouter donneur
         </a>
 
-        <a href="" mat-button>
+        <a routerLink="/auth/login" mat-button>
             <mat-icon>locked_in</mat-icon>
             Connexion
         </a>
 
     </div>
 </mat-toolbar>
+
+<router-outlet></router-outlet>
 
 
 <app-footer></app-footer>

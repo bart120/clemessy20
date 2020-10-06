@@ -7,6 +7,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { DonneurModule } from './pages/donneur/donneur.module';
+import { RouterModule } from '@angular/router';
+import { APP_ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,7 @@ import { DonneurModule } from './pages/donneur/donneur.module';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(APP_ROUTES),
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
