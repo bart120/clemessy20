@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  urlDonneurs: 'https://ccii-labs05.clemessy.fr/template-rest/api/v1/donneurs'
 };
 
 /*

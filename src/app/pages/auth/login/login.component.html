@@ -1,1 +1,16 @@
-<p>login works!</p>
+<h1>Connexion</h1>
+
+<form class="myform">
+    <mat-form-field>
+        <input matInput type="email" placeholder="Email" #mail (keyup.enter)="password.focus()" />
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput type="password" placeholder="Mot de passe" #password
+            (keyup.enter)="onLogin($event, mail.value)" />
+    </mat-form-field>
+
+    <div>
+        <button type="button" mat-button (click)="onLogin($event, mail.value)">Se connecter</button>
+    </div>
+</form>
