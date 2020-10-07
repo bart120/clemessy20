@@ -20,8 +20,9 @@ export class DonneurListComponent implements OnInit {
   ngOnInit(): void {
     //this.donneurs = this.servDonneur.getDonneurs();
     this.servDonneur.getDonneurs().subscribe(data => {
+
       this.donneurs = data;
-    });
+    }, err => { console.log(err); });
   }
 
 }

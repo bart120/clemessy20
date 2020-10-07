@@ -4,17 +4,23 @@ import { FooterComponent } from './footer/footer.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { DonneurListComponent } from './donneur-list/donneur-list.component';
+import { MaterialModule } from 'src/app/material.module';
+import { RouterModule } from '@angular/router';
+import { DonneurDetailComponent } from './donneur-detail/donneur-detail.component';
 
 
 @NgModule({
   declarations: [
     FooterComponent,
-    DonneurListComponent
+    DonneurListComponent,
+    DonneurDetailComponent
   ],
   imports: [
     CommonModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MaterialModule,
+    RouterModule
   ],
   exports: [
     FooterComponent

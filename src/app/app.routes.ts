@@ -3,6 +3,7 @@ import { LoginComponent } from './pages/auth/login/login.component';
 import { HomeComponent } from './pages/autre/home/home.component';
 import { IntrouvableComponent } from './pages/autre/introuvable/introuvable.component';
 import { DonneurAjouterComponent } from './pages/donneur/donneur-ajouter/donneur-ajouter.component';
+import { DonneurDetailComponent } from './pages/donneur/donneur-detail/donneur-detail.component';
 import { DonneurListComponent } from './pages/donneur/donneur-list/donneur-list.component';
 
 /**
@@ -13,7 +14,8 @@ export const APP_ROUTES: Routes = [
         path: 'donneurs', children: [
 
             { path: 'liste', component: DonneurListComponent },
-            { path: 'ajouter', component: DonneurAjouterComponent }
+            { path: 'ajouter', component: DonneurAjouterComponent },
+            { path: 'detail/:id', component: DonneurDetailComponent }
         ]
     },
     //{ path: 'auth/login', component: LoginComponent },

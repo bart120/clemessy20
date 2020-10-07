@@ -1,2 +1,20 @@
-<p>donneur-list works!</p>
-{{donneurs|json}}
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let donneur of donneurs">
+            <td>{{donneur.nom}}</td>
+            <td>{{donneur.prenom}}</td>
+            <td>
+                <a [routerLink]="['/donneurs/detail/', donneur.idDonneur]" mat-button>
+                    <mat-icon>search</mat-icon>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,7 +1,7 @@
 <div>
-    <h3>TOP {{donneurs.length}}</h3>
+    <h3>TOP {{donneurs?.length}}</h3>
 
-    <mat-grid-list cols="{{donneurs.length}}">
+    <mat-grid-list cols="{{donneurs?.length}}">
         <mat-grid-tile *ngFor="let donneur of donneurs">
             <mat-card>
                 <mat-card-header>

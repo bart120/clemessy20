@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, timer } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { DonneurModel } from '../models/donneur.model';
+import { map, mergeMap } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class DonneurService {
@@ -19,6 +20,18 @@ export class DonneurService {
             { nom: 'Bleu', prenom: 'Bob' },
             { nom: 'Dupont', prenom: 'Jean' }
         ];*/
-        return this.http.get<Array<DonneurModel>>(environment.urlDonneurs);
+        return this.http.get<any>(environment.urlDonneurs).pipe(map(rrdto => rrdto.data));
+    }
+
+    getDonneurById(id: number): Observable<DonneurModel> {
+        return this.http.get<any>(`${environment.urlDonneurs}/${id}`);
+    }
+
+    getTopDonneursRefresh(): Observable<Array<DonneurModel>> {
+        return timer(0, 10000).pipe(
+            mergeMap(
+                () => this.http.get<any>(environment.urlDonneurs).pipe(map(rrdto => rrdto.data.splice(0, 5)))
+            )
+        );
     }
 }
