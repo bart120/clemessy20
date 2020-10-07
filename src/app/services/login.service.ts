@@ -22,7 +22,7 @@ export class LoginService {
                 grant_type: 'password',
                 username: login,
                 password: password,
-                scope: 'read write
+                scope: 'read write'
             }
         });
         return this.htpp.post(environment.urlAuth, params, { headers: headers });
