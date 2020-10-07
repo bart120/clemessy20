@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,14 +12,14 @@ export class LoginComponent implements OnInit {
   @ViewChild('password', { static: false })
   private passwd: ElementRef;
 
-  constructor() { }
+  constructor(private servAuth: AuthService) { }
 
   ngOnInit(): void {
   }
 
   onLogin(ev: any, inpMail: any): void {
     console.log(this.passwd.nativeElement.value);
-    //login serveur
+    this.servAuth.login(inpMail, this.passwd.nativeElement.value);
 
   }
 
