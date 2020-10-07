@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
 
   onLogin(ev: any, inpMail: any): void {
     console.log(this.passwd.nativeElement.value);
+    //login serveur
+
   }
 
 }

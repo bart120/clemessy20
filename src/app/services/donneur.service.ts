@@ -34,4 +34,8 @@ export class DonneurService {
             )
         );
     }
+
+    ajouterDonneur(donneur: DonneurModel): Observable<DonneurModel> {
+        return this.http.post<DonneurModel>(environment.urlDonneurs, donneur);
+    }
 }

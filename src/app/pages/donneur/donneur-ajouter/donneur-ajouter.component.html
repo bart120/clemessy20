@@ -1,1 +1,21 @@
-<p>donneur-ajouter works!</p>
+<h3>Ajouter un donneur</h3>
+
+<form class="myform" [formGroup]="formDonneur" (ngSubmit)="submit()">
+    <mat-form-field>
+        <input matInput type="text" placeholder="Nom" formControlName="nom" />
+        <mat-error>Le nom est obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Prénom" type="text" formControlName="prenom">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select placeholder="Centre" formControlName="centreId">
+            <mat-option *ngFor="let centre of centres" [value]="centre.centreId">{{centre.nom}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div>
+        <button mat-button type="submit" disabled={{formDonneur.invalid}}>Enregistrer</button>
+    </div>
+</form>
