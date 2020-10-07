@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { HomeComponent } from './pages/autre/home/home.component';
 import { IntrouvableComponent } from './pages/autre/introuvable/introuvable.component';
@@ -14,7 +15,7 @@ export const APP_ROUTES: Routes = [
         path: 'donneurs', children: [
 
             { path: 'liste', component: DonneurListComponent },
-            { path: 'ajouter', component: DonneurAjouterComponent },
+            { path: 'ajouter', component: DonneurAjouterComponent, canActivate: [AuthGuard] },
             { path: 'detail/:id', component: DonneurDetailComponent }
         ]
     },
