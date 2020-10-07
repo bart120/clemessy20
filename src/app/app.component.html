@@ -17,10 +17,18 @@
             Ajouter donneur
         </a>
 
-        <a routerLink="/auth/login" mat-button>
-            <mat-icon>locked_in</mat-icon>
-            Connexion
-        </a>
+        <ng-container *ngIf="user == null; else logout">
+            <a routerLink="/auth/login" mat-button>
+                <mat-icon>locked_in</mat-icon>
+                Connexion
+            </a>
+        </ng-container>
+        <ng-template #logout>
+            Bonjour {{user?.email}}
+            <button mat-button type="button" (click)="onLogout()">
+                <mat-icon>locked_out</mat-icon>Se déconnecter
+            </button>
+        </ng-template>
 
     </div>
 </mat-toolbar>
